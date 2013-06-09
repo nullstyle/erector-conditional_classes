@@ -50,7 +50,7 @@ just:
 require 'erector/conditional_classes'
 ```
 
-and your good to go.
+and you're good to go.
 
 ## Contributing
 

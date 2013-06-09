@@ -16,7 +16,14 @@ module Erector
         should_render = args.last.delete(:if)
         should_render = should_render.call if should_render.respond_to?(:call)
 
-        return self unless should_render
+        unless should_render
+          # hacky: we set the block at this level
+          # so even if bail out because we shouldn't render the class
+          # we still get expected behavior on the final member of a chain
+          @inside_renderer = block if block_given?
+          _render
+          return self
+        end
       end
 
       method_missing_without_conditionals(method_name, *args, &block)

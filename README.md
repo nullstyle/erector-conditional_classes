@@ -1,6 +1,32 @@
 # Erector::ConditionalClasses
 
-TODO: Write a gem description
+erector-conditional_classes is a rubygem that makes using the conditional
+application of html classes in your views nicer.  
+
+Erector provides a wonderful chain-based api for applying classes to an element:
+
+```ruby
+span.foo.bar.baz "hello" # => '<span class="foo bar baz">hello</span>'
+```
+
+The pain comes when you need to conditionally apply classes to an element:
+
+```ruby
+classes = [:foo]
+classes << :bar if some_condition?
+
+span("hello", :class => classes) # => '<span class="foo">hello</span>'
+```
+
+This gem provides support in the chaining API for conditionals:
+
+```ruby
+#block based
+span.foo.bar(:if => some_condition?){ text "hello" } # => '<span class="foo">hello</span>'
+
+# non-block content
+span("hello").foo.bar(:if => some_condition?) # => '<span class="foo">hello</span>'
+```
 
 ## Installation
 
@@ -18,7 +44,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+just:
+
+```ruby
+require 'erector/conditional_classes'
+```
+
+and your good to go.
 
 ## Contributing
 

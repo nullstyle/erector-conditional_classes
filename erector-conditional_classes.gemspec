@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["nullstyle@gmail.com"]
   spec.description   = %q{Erector extension for conditional classes}
   spec.summary       = %q{Adds helpers to make conditional classes on an element more friendly}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/nullstyle/erector-conditional_classes"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

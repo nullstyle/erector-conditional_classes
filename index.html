@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Erector-conditional classes by nullstyle</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Erector-conditional classes</h1>
+          <h2>Erector extension for conditional classes</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/nullstyle/erector-conditional_classes/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/nullstyle/erector-conditional_classes/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/nullstyle/erector-conditional_classes" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="erectorconditionalclasses" class="anchor" href="#erectorconditionalclasses"><span class="octicon octicon-link"></span></a>Erector::ConditionalClasses</h1>
+
+<p>erector-conditional_classes is a rubygem that makes using the conditional
+application of html classes in your views nicer.  </p>
+
+<p>Erector provides a wonderful chain-based api for applying classes to an element:</p>
+
+<div class="highlight"><pre><span class="n">span</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">bar</span><span class="o">.</span><span class="n">baz</span> <span class="s2">"hello"</span> <span class="c1"># =&gt; '&lt;span class="foo bar baz"&gt;hello&lt;/span&gt;'</span>
+</pre></div>
+
+<p>The pain comes when you need to conditionally apply classes to an element:</p>
+
+<div class="highlight"><pre><span class="n">classes</span> <span class="o">=</span> <span class="o">[</span><span class="ss">:foo</span><span class="o">]</span>
+<span class="n">classes</span> <span class="o">&lt;&lt;</span> <span class="ss">:bar</span> <span class="k">if</span> <span class="n">some_condition?</span>
+
+<span class="n">span</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">,</span> <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="n">classes</span><span class="p">)</span> <span class="c1"># =&gt; '&lt;span class="foo"&gt;hello&lt;/span&gt;'</span>
+</pre></div>
+
+<p>This gem provides support in the chaining API for conditionals:</p>
+
+<div class="highlight"><pre><span class="c1">#block based</span>
+<span class="n">span</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="ss">:if</span> <span class="o">=&gt;</span> <span class="n">some_condition?</span><span class="p">){</span> <span class="n">text</span> <span class="s2">"hello"</span> <span class="p">}</span> <span class="c1"># =&gt; '&lt;span class="foo"&gt;hello&lt;/span&gt;'</span>
+
+<span class="c1"># non-block content</span>
+<span class="n">span</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">)</span><span class="o">.</span><span class="n">foo</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="ss">:if</span> <span class="o">=&gt;</span> <span class="n">some_condition?</span><span class="p">)</span> <span class="c1"># =&gt; '&lt;span class="foo"&gt;hello&lt;/span&gt;'</span>
+</pre></div>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<pre><code>gem 'erector-conditional_classes'
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install erector-conditional_classes
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>just:</p>
+
+<div class="highlight"><pre><span class="nb">require</span> <span class="s1">'erector/conditional_classes'</span>
+</pre></div>
+
+<p>and you're good to go.</p>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+        </section>
+
+        <footer>
+          Erector-conditional classes is maintained by <a href="https://github.com/nullstyle">nullstyle</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
